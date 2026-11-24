@@ -23,6 +23,7 @@ task = Task.init(
     auto_connect_frameworks={
         "pytorch": False,
     },
+    output_uri=True
 )
 
 logger = task.get_logger()
