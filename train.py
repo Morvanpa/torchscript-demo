@@ -23,7 +23,7 @@ task = Task.init(
     auto_connect_frameworks={
         "pytorch": False,
     },
-    output_uri=True
+    output_uri="http://192.168.131.242:8081"
 )
 
 logger = task.get_logger()
