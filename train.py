@@ -398,9 +398,13 @@ print("Model local path:", torchscript_path)
 
 print("Model exists:", torchscript_path.exists())
 
+output_model.set_upload_destination(
+    "http://192.168.131.242:8081"
+)
+
 output_model.update_weights(
     weights_filename=str(torchscript_path),
-    async_enable=False
+    async_enable=False,
 )
 
 print("=" * 60)
