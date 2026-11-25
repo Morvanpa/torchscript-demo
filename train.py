@@ -389,8 +389,18 @@ print(f"Output shape: {prediction.shape}")
 # 11. UPLOAD MODEL TO CLEARML
 # ============================================================
 
+print("Task output URI:", task.output_uri)
+
+print("Model upload destination:",
+      output_model.upload_storage_uri)
+
+print("Model local path:", torchscript_path)
+
+print("Model exists:", torchscript_path.exists())
+
 output_model.update_weights(
     weights_filename=str(torchscript_path),
+    async_enable=False
 )
 
 print("=" * 60)
